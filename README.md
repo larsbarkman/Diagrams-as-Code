@@ -2,7 +2,7 @@
 Examples of models I've done in Graphviz that could be of interest to others
 
 ##Alignment Maps
--AlignmentMap.*
+- AlignmentMap.* (see <a href="http://martinfowler.com/bliki/AlignmentMap.html" target="_blank">Alignment maps</a>)
 
 ##Organizational Charts
--OrganizationalChart.*
+- OrganizationalChart.*
