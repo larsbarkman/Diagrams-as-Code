@@ -1,0 +1,39 @@
+@startuml
+
+skinparam packagesep 5
+skinparam ranksep 5
+
+package "LEGACY" {
+  [Systems] .up.> [Facade] :Use
+  [Managed Services]
+}
+
+package "CLOUD NATIVE" {
+  package "Software as a Service (SaaS)" {
+    [External SaaS]
+    [Layer 8: Service]
+    package "Platform as a Service (PaaS)" {
+      [Layer 7: Workflow]
+      package "Containers as a Service (CaaS)" {
+        [Layer 6: Orchestration]
+        [Layer 5: Scheduling]
+        [Layer 4: Container Engine]
+        [Layer 3: Operating System]
+        package "Infrastructure as a Service (IaaS)" {
+          [Layer 2: Virtual Infrastructure]
+          [Layer 1: Physical Infrastructure]
+        }
+      }
+    }
+  }
+}
+
+[Layer 8: Service] ..> [Layer 7: Workflow] : Use
+[Layer 7: Workflow] ..> [Layer 6: Orchestration] : Use
+[Layer 6: Orchestration] ..> [Layer 5: Scheduling] : Use
+[Layer 5: Scheduling] ..> [Layer 4: Container Engine] : Use
+[Layer 4: Container Engine] ..> [Layer 3: Operating System] : Use
+[Layer 3: Operating System] ..> [Layer 2: Virtual Infrastructure] : Use
+[Layer 2: Virtual Infrastructure] ..> [Layer 1: Physical Infrastructure] : Use
+
+@enduml
